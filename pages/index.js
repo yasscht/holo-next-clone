@@ -1,7 +1,13 @@
+import Header from "../components/Header";
+import Movies from "../components/Movies";
+import Navbar from "../components/Navbar";
+
 export default function Home() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Header />
+      <Navbar />
+      <Movies />
     </div>
   );
 }
