@@ -3,18 +3,19 @@ import Movies from "../components/Movies";
 import Navbar from "../components/Navbar";
 import request from "../utils/request";
 
-export default function Home({ results, g }) {
-  console.log(results, g);
+export default function Home({ results }) {
+  console.log(results);
   return (
     <div>
       <Header />
       <Navbar />
-      <Movies />
+      <Movies results={results} />
     </div>
   );
 }
 export async function getServerSideProps(context) {
-  const genre = context.query.genre;
+  let genre = context.query.genre;
+
   const req = await fetch(
     `https://api.themoviedb.org/3${
       request[genre]?.url || request?.fetchTrendingMovies?.url
@@ -22,8 +23,7 @@ export async function getServerSideProps(context) {
   ).then((res) => res.json());
   return {
     props: {
-      results: req,
-      g: request[genre].url,
+      results: req.results,
     },
   };
 }
