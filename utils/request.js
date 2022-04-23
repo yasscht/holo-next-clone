@@ -3,11 +3,11 @@ const API_KEY = process.env.API_KEY;
 export default {
   fetchTrending: {
     title: "Trending",
-    url: `/trending/all/week?api_key=${API_KEY}`,
+    url: `/movie/trending/all/day?api_key=${API_KEY}`,
   },
   fetchTopRated: {
     title: "Top rated",
-    url: `/top_rated?api_key=${API_KEY}&language=en-US`,
+    url: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
   },
   fetchActionMovies: {
     title: "Action",
