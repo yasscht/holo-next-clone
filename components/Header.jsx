@@ -18,10 +18,10 @@ const Header = () => {
     { title: "ACCOUNT", Icon: UserIcon },
   ];
   return (
-    <div className="flex items-center  flex-col sm:flex-row justify-between pr-4">
+    <div className="flex items-center  flex-col-reverse sm:flex-row justify-between pr-4">
       <div className="flex items-center justify-evenly flex-grow max-w-2xl p-6">
         {HeaderItems.map(({ title, Icon }) => (
-          <HeaderItem title={title} Icon={Icon} />
+          <HeaderItem key={title} title={title} Icon={Icon} />
         ))}
       </div>
       <div>
