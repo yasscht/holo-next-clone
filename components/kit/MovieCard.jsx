@@ -1,10 +1,14 @@
 import { ThumbUpIcon } from "@heroicons/react/outline";
 import Image from "next/Image";
-const MovieCard = ({ result }) => {
+import { forwardRef } from "react";
+const MovieCard = forwardRef(({ result }, ref) => {
   console.log(result);
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="group cursor-pointer transition transform duration-200 ease-in sm:hover:scale-105 hover:z-50 p-3">
+    <div
+      ref={ref}
+      className="group cursor-pointer transition transform duration-200 ease-in sm:hover:scale-105 hover:z-50 p-3"
+    >
       <Image
         src={
           `${BASE_URL}${result?.backdrop_path || result?.poster_path}` ||
@@ -29,6 +33,6 @@ const MovieCard = ({ result }) => {
       </div>
     </div>
   );
-};
+});
 
 export default MovieCard;
