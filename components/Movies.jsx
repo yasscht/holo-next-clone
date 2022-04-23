@@ -2,7 +2,7 @@ import MovieCard from "./kit/MovieCard";
 
 const Movies = ({ results }) => {
   return (
-    <div className="flex items-center justify-center flex-wrap w-screen">
+    <div className=" px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-3">
       {results.map((result) => (
         <MovieCard key={result.id} result={result} />
       ))}
